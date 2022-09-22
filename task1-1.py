@@ -5,28 +5,11 @@ parser.add_argument('operation', type=str, help='operation for x1, x2')
 parser.add_argument('x2', type=float, help='the second value')
 args = parser.parse_args()
 
-
-def addition(x1, x2):
-    return x1 + x2
-
-
-def subtraction(x1, x2):
-    return x1 - x2
-
-
-def multiplication(x1, x2):
-    return x1 * x2
-
-
-def division(x1, x2):
-    return x1 / x2
-
-
 calculator = {
-    '+': addition,
-    '-': subtraction,
-    '*': multiplication,
-    '/': division,
+    '+': lambda x1, x2: x1 + x2,
+    '-': lambda x1, x2: x1 - x2,
+    '*': lambda x1, x2: x1 * x2,
+    '/': lambda x1, x2: x1 / x2,
 }
 
 result = calculator.get(args.operation)
