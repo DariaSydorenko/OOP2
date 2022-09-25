@@ -37,7 +37,7 @@ class Rectangle:
 
 
 result = Rectangle(4.0, 2.0)
-print(result.perimeter())
-print(result.area())
+print('Perimeter =', result.perimeter())
+print('Area =', result.area())
 
 
