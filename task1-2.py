@@ -13,7 +13,10 @@ def func():
 
 
 if func():
-    result = getattr(operator, args.operation)
-    print(result(args.x1, args.x2))
+    if args.x2 == 0 and args.operation == 'truediv':
+        raise ZeroDivisionError
+    else:
+        result = getattr(operator, args.operation)
+        print(result(args.x1, args.x2))
 else:
     print('There is no such function')
