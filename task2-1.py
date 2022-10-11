@@ -1,7 +1,4 @@
 class Rectangle:
-    length = None
-    width = None
-
     def __init__(self, length, width):
         self.length = length
         self.width = width
@@ -16,16 +13,16 @@ class Rectangle:
 
     @length.setter
     def length(self, new_length):
-        Rectangle.CheckValue(new_length)
+        Rectangle.check_value(new_length)
         self._length = new_length
 
     @width.setter
     def width(self, new_width):
-        Rectangle.CheckValue(new_width)
+        Rectangle.check_value(new_width)
         self._width = new_width
 
     @staticmethod
-    def CheckValue(value):
+    def check_value(value):
         if (value < 0.0 or value > 20.0) or not isinstance(value, float):
             raise Exception
 
@@ -39,5 +36,3 @@ class Rectangle:
 result = Rectangle(4.0, 2.0)
 print('Perimeter =', result.perimeter())
 print('Area =', result.area())
-
-
